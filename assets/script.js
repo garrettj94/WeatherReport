@@ -1,7 +1,8 @@
 var fetchButton = document.querySelector(".fetchbtn")
 const api = 'f18d365e081872f946b3849bff8f041f';
 
-window.addEventListener('load', () => {
+window.addEventListener('load', (event) => {
+    event.preventDefault();
     let long;
     let lat;
     // Accesing Geolocation of User
@@ -10,7 +11,7 @@ window.addEventListener('load', () => {
             // Storing Longitude and Latitude in variables
             long = position.coords.longitude;
             lat = position.coords.latitude;
-            const base = 'https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}';
+            const base = 'api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}';
 
             fetch(base)
                 .then((response) => {
@@ -42,11 +43,9 @@ window.addEventListener('load', () => {
 
 
 
+fetchButton.addEventListener('click', base);
+base.preventDefault();
 
-
-
-
-fetchButton.addEventListener('click', getApi);
 
 
 
