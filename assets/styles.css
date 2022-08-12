@@ -3,7 +3,7 @@ body{
     image-rendering: crisp-edges;
     margin: auto;
 }
-.btn {
+.fetchbtn {
     font-size: 1.3rem;
     text-decoration: none;
     padding: 6px 5px;
@@ -19,14 +19,14 @@ body{
     transform: translate(-1px, -1px);
   }
   
-  .btn:hover {
+  .fetchbtn:hover {
     color: whitesmoke;
     background-color: green;
     transform: translate(0, 0);
     box-shadow: 2px 2px black;
   }
   
-  .btn-inline {
+  .fetchbtn-inline {
     display: inline;
   }
   .card {
