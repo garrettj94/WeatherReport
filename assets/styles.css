@@ -16,7 +16,7 @@ body{
     outline: none;
     background-color: blue;
     box-shadow: 3px 3px black;
-    transform: translate(-1px, -1px);
+    
   }
   
   .fetchbtn:hover {
@@ -34,8 +34,7 @@ body{
     border: 3px solid ;
     border-radius: 0.3rem;
     position:absolute;
-    left: 90%;
-    top: 200px;
+    
     width: 100%;
   }
   
@@ -51,17 +50,17 @@ body{
   }
   
   /* FORM */
-  .form-label,
+/* 
   .form-input,
   .form-textarea {
     display: block;
   }
-  
-  .form-label {
+   */
+  /* .form-label {
     font-size: 1.1rem;
     margin: 0 0 0 5px;
-    
-  }
+     */
+  /* } */
   
   .form-input {
     width: 100%;
