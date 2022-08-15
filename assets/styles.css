@@ -49,18 +49,7 @@ body{
     padding: 2.5%;
   }
   
-  /* FORM */
-/* 
-  .form-input,
-  .form-textarea {
-    display: block;
-  }
-   */
-  /* .form-label {
-    font-size: 1.1rem;
-    margin: 0 0 0 5px;
-     */
-  /* } */
+
   
   .form-input {
     width: 100%;
@@ -75,4 +64,9 @@ h1{
     border: solid black;
     color: white;
     background-color: black;
+}
+
+table{
+  border: solid;
+  position:absolute;
 }
