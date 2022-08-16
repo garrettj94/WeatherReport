@@ -1,17 +1,16 @@
 var fetchButton = document.querySelector(".fetchbtn")
 var APIKey = "308e27bc851bb1f5720b52c84ffa6ee2";
 var city = document.getElementById('city');
-var card = document.querySelector('.card');
-var api = document.querySelector('.api');
-var tableBody =document.getElementById('weather-table');
+var weatherBody = document.getElementById('weather-table');
 var form = document.getElementById("user-form");
+
 
 
 form.addEventListener('submit', function (event) {
     event.preventDefault()
     weatherReport()
-    localStorage.setItem("city" , JSON.stringify
-    (city));
+    localStorage.setItem("city", JSON.stringify
+        (city));
 });
 
 
@@ -30,7 +29,7 @@ function weatherReport() {
         }).then(data => {
             //response now contains parsed JSON ready for use
             console.log(data.coord.lat, data.coord.lon)
-    
+
             var lon = data.coord.lon
             var lat = data.coord.lat
             var forcastURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + '&lon=' + lon + '&units=imperial&appid=' + APIKey;
@@ -44,24 +43,21 @@ function weatherReport() {
 
                 }).then(data => {
                     //response now contains parsed JSON ready for use
-                    
                     for (var i = 0; i < data.length; i++) {
-                        // Creating elements, tablerow, tabledata, and anchor
                         var createTableRow = document.createElement('tr');
                         var tableData = document.createElement('td');
                         var link = document.createElement('a');
 
-                        // Setting the text of link and the href of the link
                         link.textContent = data[i].html_url;
                         link.href = data[i].html_url;
 
-                        // Appending the link to the tabledata and then appending the tabledata to the tablerow
-                        // The tablerow then gets appended to the tablebody
                         tableData.appendChild(link);
                         createTableRow.appendChild(tableData);
-                        tableBody.appendChild(createTableRow);
+                        weatherBody.appendChild(createTableRow);
+                        console.log(createElement)
+
                     }
-                    console.log(data)
+                
                 }).catch((errorResponse) => {
                     if (errorResponse.text) { //additional error information
                         errorResponse.text().then(errorMessage => {
@@ -70,9 +66,10 @@ function weatherReport() {
                     } else {
                         //no additional error information 
                     }
+                
                 });
         });
-        };
+};
 
 
 
